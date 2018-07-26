@@ -1,0 +1,117 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Demo Example</title>
+        <script src="js/jquery-1.6.js"></script>
+        <script src="js/jquery.jqzoom-core.js"></script>
+        <link href="css/jquery.jqzoom.css" rel="stylesheet" />
+        <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        /* The grid: Four equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 25%;
+            padding: 10px;
+        }
+
+        /* Style the images inside the grid */
+        .column img {
+            opacity: 0.8; 
+            cursor: pointer; 
+        }
+
+        .column img:hover {
+            opacity: 1;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* The expanding image container */
+        .container {
+            position: relative;
+            display: none;
+        }
+
+        /* Expanding image text */
+        #imgtext {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Closable button inside the expanded image */
+        .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+        }
+        </style>
+    </head>
+    <body style="">
+        <!-- <div class="row">
+          <div class="column">
+            <img src="images/particle.jpeg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+          </div>
+          <div class="column">
+            <img src="images/particle.jpeg" alt="Snow" style="width:100%" onclick="myFunction(this);">
+          </div>
+          <div class="column">
+            <img src="images/particle.jpeg" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+          </div>
+          <div class="column">
+            <img src="images/particle.jpeg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+          </div>
+        </div>
+
+        <div class="container">
+          <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+          <img id="expandedImg" style="">
+          <div id="imgtext"></div>
+        </div> -->
+
+        <div style="position:relative;">
+            <div class="row" >
+            <a href="images/particle.jpeg" class="minipic" title="">
+                <img style="height: 200px;width: 200px;" src="images/particle.jpeg" title=""/>
+            </a>
+            </div>
+            <div class="row">
+            <a href="images/particle.jpeg" class="minipic" title="">
+                <img style="height: 200px;width: 200px;" src="images/particle.jpeg" title=""/>
+            </a>
+            </div>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('.minipic').jqzoom({
+                    zoomType: 'standard',
+                    lens: true,
+                    preloadImages: false,
+                    alwaysOn: false,
+                    zoomHeight: 500,
+                    zoomWidth:500
+                });
+
+            });
+        </script>
+        </div>
+
+    </body>
+</html>
